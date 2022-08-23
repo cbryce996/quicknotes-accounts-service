@@ -1,9 +1,15 @@
-function buildMakeUser(/*{id, md5, sanitize}*/) {
+/*
+    @Description: User factory for creating user instances and ensuring valid state upon creation.
+*/
+
+// Dependencies are injected as an object
+function buildMakeUser(/*{_id, _md5, _sanitize}*/) {
     return function makeUser({
-        id,
+        id = _id.newID(),
         username,
         password
     } = {}) {
+        // Domain business logic
         if (!id) {
             throw new Error('id is required');
         }
@@ -13,7 +19,15 @@ function buildMakeUser(/*{id, md5, sanitize}*/) {
         if (!password) {
             throw new Error('password is required');
         }
-        
+
+        // Sanitize inputs
+        //_sanitize.sanitize(username);
+        //_sanitize.sanitize(password);
+
+        // Hash and salt password
+        //_md5.saltHash(password);
+
+        // Returns an immutable instance with getters
         return Object.freeze({
             getID: () => id,
             getUsername: () => username,
