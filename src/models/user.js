@@ -1,5 +1,5 @@
 /*
-    @Description: User factory for creating user instances and ensuring valid state upon creation.
+    @Description: User factory for creating user objects and ensuring valid state upon creation.
 */
 
 // Dependencies are injected as an object
@@ -21,13 +21,13 @@ function buildMakeUser(/*{_id, _md5, _sanitize}*/) {
         }
 
         // Sanitize inputs
-        //_sanitize.sanitize(username);
-        //_sanitize.sanitize(password);
+        //username = _sanitize.sanitize(username);
+        //password = _sanitize.sanitize(password);
 
         // Hash and salt password
-        //_md5.saltHash(password);
+        //password = _md5.saltHash(password);
 
-        // Returns an immutable instance with getters
+        // Returns an immutable objects with getters
         return Object.freeze({
             getID: () => id,
             getUsername: () => username,

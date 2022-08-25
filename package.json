@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "jest --watch --config ./jest.config.json"
+    "test": "jest --coverage --watch --config ./jest.config.json"
   },
   "author": "",
   "license": "ISC",
@@ -15,8 +15,8 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19",
     "jest": "^28.1.3",
-    "jest-cli": "^28.1.3"
+    "jest-cli": "^28.1.3",
+    "nodemon": "^2.0.19"
   }
 }
