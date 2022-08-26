@@ -5,7 +5,7 @@
 // Dependencies are injected as an object
 function buildMakeUser(/*{_id, _md5, _sanitize}*/) {
     return function makeUser({
-        id = _id.newID(),
+        id,
         username,
         password
     } = {}) {

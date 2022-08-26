@@ -9,5 +9,5 @@ services:
       - NODE_ENV=production
       - PORTS=3000
     ports:
-      - PORTS=3000:3000
+      - "3000:3000"
     command: node index.js

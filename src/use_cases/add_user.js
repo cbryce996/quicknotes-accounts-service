@@ -5,13 +5,15 @@
 const makeUser = require('../models/user');
 
 // Dependencies are injected as an object
-function buildAddUser({user_db}) {
-    function addUser(userData) {
+function buildAddUser({userDB} = {}) {
+    return function addUser(userData) {
         const user = makeUser(userData);
-        return user_db.insert({
+        return userDB.insert({
             id: user.getID(),
             username: user.getUsername(),
             password: user.getPassword()
         })
     }
 }
+
+module.exports = buildAddUser;
