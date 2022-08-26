@@ -8,7 +8,6 @@ const makeUserDB = require('../data_access/user_db');
 const makeFakeUser = require('../../fixtures/user');
 
 describe('add user', () => {
-
     it ('should add user to the database', () => {
         const userDB = makeUserDB();
         const user = makeFakeUser();
