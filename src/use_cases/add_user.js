@@ -1,19 +1,14 @@
-/*
-    @Description: Add user factory for adding users to database through injected data access object.
-*/
+const { makeUser } = require('../models')
 
-const makeUser = require('../models/user');
-
-// Dependencies are injected as an object
-function buildAddUser({userDB}) {
-    return function addUser(userData) {
-        const user = makeUser(userData);
-        return userDB.insert({
-            id: user.getID(),
-            username: user.getUsername(),
-            password: user.getPassword()
+function addUserFactory({ userDb }) {
+    return function makeAddUser({ id, username, password }) {
+        const user = makeUser({ id, username, password })
+        return userDb.insert({
+            id,
+            username,
+            password
         })
     }
 }
 
-module.exports = buildAddUser;
+module.exports = addUserFactory

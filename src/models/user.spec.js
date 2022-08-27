@@ -1,17 +1,17 @@
-const makeFakeUser = require('../../fixtures/user');
-const makeUser = require('./user');
+const fakeUser = require('../../fixtures/user')
+const { makeUser } = require('./')
 
 describe('user', () => {
-    it ('must have an id', () => {
-        const fakeUser =  makeFakeUser({id: null});
-        expect(() => makeUser(fakeUser)).toThrow('id is required')
+    it('must include an id', () => {
+        const user = fakeUser({ id: null })
+        expect(() => makeUser(user)).toThrow('must include an id')
     })
-    it ('must have a username', () => {
-        const fakeUser =  makeFakeUser({username: null});
-        expect(() => makeUser(fakeUser)).toThrow('username is required')
+    it('must include a username', () => {
+        const user = fakeUser({ username: null })
+        expect(() => makeUser(user)).toThrow('must include a username')
     })
-    it ('must have a password', () => {
-        const fakeUser =  makeFakeUser({password: null});
-        expect(() => makeUser(fakeUser)).toThrow('password is required')
+    it('must include a password', () => {
+        const user = fakeUser({ password: null })
+        expect(() => makeUser(user)).toThrow('must include a password')
     })
 })

@@ -1,11 +1,10 @@
-function makeUserDB() {
-    function insert(data) {
-        return data;
+function makeUserDb (/*{Dependencies}*/) {
+    function insert (data) {
+        return data
     }
-    
     return Object.freeze({
         insert
     })
 }
 
-module.exports = makeUserDB;
+module.exports = makeUserDb

@@ -1,8 +1,8 @@
 function makeFakeUser(overrides) {
     const user = {
         id: 1,
-        username: 'test-user',
-        password: 'test-password'
+        username: 'cameron',
+        password: 'supersecret'
     }
 
     return {
@@ -11,4 +11,4 @@ function makeFakeUser(overrides) {
     }
 }
 
-module.exports = makeFakeUser;
+module.exports = makeFakeUser
